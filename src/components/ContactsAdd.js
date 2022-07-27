@@ -33,8 +33,15 @@ function ContactsAdd(props) {
     }
   };
 
+  // an onsubmit handler function that also makes a post fetch request to the json server
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    console.log("I have submitted!");
+  };
+
   return (
-    <form className="form-stack contact-form">
+    <form className="form-stack contact-form" onSubmit={submitForm}>
       <h2>Create Contact</h2>
 
       <label htmlFor="firstName">First Name</label>
