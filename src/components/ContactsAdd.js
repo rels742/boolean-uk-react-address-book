@@ -8,15 +8,29 @@ function ContactsAdd(props) {
   const { setContacts, contacts } = props;
 
   const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
 
   //TODO: Implement controlled form
   //send POST to json server on form submit
 
   const handleChange = (event) => {
     const inputValue = event.target.value;
-    console.log("I am changing successfully!", inputValue);
+    const inputFieldName = event.target.name;
+    console.log("I am changing successfully!", inputValue, inputFieldName);
 
-    setFirstName(inputValue);
+    if (inputFieldName === "firstName") {
+      setFirstName(inputValue);
+    } else if (inputFieldName === "lastName") {
+      setLastName(inputValue);
+    } else if (inputFieldName === "street") {
+      setStreet(inputValue);
+    } else {
+      if (inputFieldName === "city") {
+        setCity(inputValue);
+      }
+    }
   };
 
   return (
@@ -34,13 +48,34 @@ function ContactsAdd(props) {
       />
 
       <label htmlFor="lastName">Last Name:</label>
-      <input id="lastName" name="lastName" type="text" required />
+      <input
+        id="lastName"
+        name="lastName"
+        type="text"
+        onChange={handleChange}
+        value={lastName}
+        required
+      />
 
       <label htmlFor="street">Street:</label>
-      <input id="street" name="street" type="text" required />
+      <input
+        id="street"
+        name="street"
+        type="text"
+        onChange={handleChange}
+        value={street}
+        required
+      />
 
       <label htmlFor="city">City:</label>
-      <input id="city" name="city" type="text" required />
+      <input
+        id="city"
+        name="city"
+        type="text"
+        onChange={handleChange}
+        value={city}
+        required
+      />
 
       <div className="actions-section">
         <button className="button blue" type="submit">
