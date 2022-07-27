@@ -50,3 +50,9 @@ export default function App() {
     </>
   );
 }
+
+// inside ContactsAdd - I need to make it a controlled form. Look back at how to make controlled forms.
+
+// add state properties for each field
+
+// and add change handlers to update the state (onChange I think)
