@@ -34,10 +34,36 @@ function ContactsAdd(props) {
   };
 
   // an onsubmit handler function that also makes a post fetch request to the json server
+
   const submitForm = (event) => {
     event.preventDefault();
+    const newContact = {
+      firstName: firstName,
+      lastName: lastName,
+      street: street,
+      city: city,
+    };
 
-    console.log("I have submitted!");
+    fetch(`http://localhost:4000/contacts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newContact),
+    })
+      .then((res) => res.json())
+
+      .then((data) => {
+        console.log("the data", data);
+        // setContacts(data);
+      });
+
+    console.log("submitted!");
+
+    setFirstName("");
+    setLastName("");
+    setStreet("");
+    setCity("");
   };
 
   return (
@@ -104,3 +130,6 @@ export default ContactsAdd;
 // add change handlers to update the change for first name (onChange I think)
 
 // forget about the other fields for now, just focus on first name
+
+//I NEED TO COMPLETE THIS STEP
+//The created contact should be also be added to the contacts list

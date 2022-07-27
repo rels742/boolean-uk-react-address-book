@@ -56,3 +56,17 @@ export default function App() {
 // add state properties for each field
 
 // and add change handlers to update the state (onChange I think)
+
+//Summary of the day:
+
+// I used use effect to fetch data from the given server
+
+// I set the routes and links so that the contacts list would be rendered
+
+// i was also able to create the add a cotact requirement by creating states for the fields,
+
+// making the forms controlled and adding change handlers to update the states
+
+// got onto the submit handler with a fetch and Post... still sort of in progress
+
+// made sure to make notes, break things down into steps, check hints, focus on one thing at a time, read over previous slides and use google and well as teacher support
