@@ -33,13 +33,18 @@ export default function App() {
         <ul>
           {/* TODO: Make these links */}
           <Link to="/">Contacts List</Link>
+
+          <Link to="/contacts/add">Add New Contact</Link>
+
           {/* <li>Contacts List</li> */}
-          <li>Add New Contact</li>
+          {/* <li>Add New Contact</li> */}
         </ul>
       </nav>
       <main>
         <Routes>
           <Route path="/" element={<ContactsList contacts={contacts} />} />
+
+          <Route path="/contacts/add" element={<ContactsAdd />} />
         </Routes>
       </main>
     </>
