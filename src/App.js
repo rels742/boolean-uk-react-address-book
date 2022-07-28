@@ -44,7 +44,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<ContactsList contacts={contacts} />} />
 
-          <Route path="/contacts/add" element={<ContactsAdd />} />
+          <Route
+            path="/contacts/add"
+            element={
+              <ContactsAdd contacts={contacts} setContacts={setContacts} />
+            }
+          />
         </Routes>
       </main>
     </>
@@ -69,4 +74,4 @@ export default function App() {
 
 // got onto the submit handler with a fetch and Post... still sort of in progress
 
-// made sure to make notes, break things down into steps, check hints, focus on one thing at a time, read over previous slides and use google and well as teacher support
+// made sure to make notes, break things down into steps, check hints, focus on one thing at a time, read over previous slides and use google and well as teacher support.

@@ -5,7 +5,7 @@ function ContactsAdd(props) {
   // setContacts and contacts must be passed as props
   // to this component so new contacts can be added to the
   // state
-  const { setContacts, contacts } = props;
+  const { contacts, setContacts } = props;
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -55,7 +55,7 @@ function ContactsAdd(props) {
 
       .then((data) => {
         console.log("the data", data);
-        // setContacts(data);
+        setContacts([...contacts, data]);
       });
 
     console.log("submitted!");
