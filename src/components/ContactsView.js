@@ -10,6 +10,23 @@ function ContactsView() {
 
   let { id } = useParams();
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:4000/contacts/${id}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+
+  //     .then((data) => {
+  //       console.log("data fetched for contact:", data);
+  //       setContact(data);
+  //     });
+  // }, [id]);
+
+  //nts, this version of the fetch commented out is not needed because by deafult fetch uses the GET method, hence why the code above and below both worked.
+
   useEffect(() => {
     fetch(`http://localhost:4000/contacts/${id}`)
       .then((res) => res.json())
