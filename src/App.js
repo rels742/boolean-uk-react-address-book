@@ -32,9 +32,14 @@ export default function App() {
         <h2>Menu</h2>
         <ul>
           {/* TODO: Make these links */}
-          <Link to="/">Contacts List</Link>
 
-          <Link to="/contacts/add">Add New Contact</Link>
+          <li>
+            <Link to="/">Contacts List</Link>
+          </li>
+
+          <li>
+            <Link to="/contacts/add">Add New Contact</Link>
+          </li>
 
           {/* <li>Contacts List</li> */}
           {/* <li>Add New Contact</li> */}
