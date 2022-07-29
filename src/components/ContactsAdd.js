@@ -11,6 +11,7 @@ function ContactsAdd(props) {
   const [lastName, setLastName] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
+  const [email, setEmail] = useState("");
 
   //TODO: Implement controlled form
   //send POST to json server on form submit
@@ -26,9 +27,11 @@ function ContactsAdd(props) {
       setLastName(inputValue);
     } else if (inputFieldName === "street") {
       setStreet(inputValue);
+    } else if (inputFieldName === "city") {
+      setCity(inputValue);
     } else {
-      if (inputFieldName === "city") {
-        setCity(inputValue);
+      if (inputFieldName === "email") {
+        setEmail(inputValue);
       }
     }
   };
@@ -42,6 +45,7 @@ function ContactsAdd(props) {
       lastName: lastName,
       street: street,
       city: city,
+      email: email,
     };
 
     fetch(`http://localhost:4000/contacts`, {
@@ -64,6 +68,7 @@ function ContactsAdd(props) {
     setLastName("");
     setStreet("");
     setCity("");
+    setEmail("");
   };
 
   return (
@@ -107,6 +112,16 @@ function ContactsAdd(props) {
         type="text"
         onChange={handleChange}
         value={city}
+        required
+      />
+
+      <label htmlFor="email">Email:</label>
+      <input
+        id="email"
+        name="email"
+        type="text"
+        onChange={handleChange}
+        value={email}
         required
       />
 
