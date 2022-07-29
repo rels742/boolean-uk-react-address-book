@@ -12,6 +12,8 @@ function ContactsAdd(props) {
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [twitter, setTwitter] = useState("");
 
   //TODO: Implement controlled form
   //send POST to json server on form submit
@@ -29,9 +31,13 @@ function ContactsAdd(props) {
       setStreet(inputValue);
     } else if (inputFieldName === "city") {
       setCity(inputValue);
+    } else if (inputFieldName === "email") {
+      setEmail(inputValue);
+    } else if (inputFieldName === "linkedin") {
+      setLinkedin(inputValue);
     } else {
-      if (inputFieldName === "email") {
-        setEmail(inputValue);
+      if (inputFieldName === "twitter") {
+        setTwitter(inputValue);
       }
     }
   };
@@ -46,6 +52,8 @@ function ContactsAdd(props) {
       street: street,
       city: city,
       email: email,
+      linkedin: linkedin,
+      twitter: twitter,
     };
 
     fetch(`http://localhost:4000/contacts`, {
@@ -69,6 +77,8 @@ function ContactsAdd(props) {
     setStreet("");
     setCity("");
     setEmail("");
+    setLinkedin("");
+    setTwitter("");
   };
 
   return (
@@ -123,6 +133,24 @@ function ContactsAdd(props) {
         onChange={handleChange}
         value={email}
         required
+      />
+
+      <label htmlFor="linkedin">LinkedIn:</label>
+      <input
+        id="linkedin"
+        name="linkedin"
+        type="text"
+        onChange={handleChange}
+        value={linkedin}
+      />
+
+      <label htmlFor="twitter">Twitter:</label>
+      <input
+        id="twitter"
+        name="twitter"
+        type="text"
+        onChange={handleChange}
+        value={twitter}
       />
 
       <div className="actions-section">

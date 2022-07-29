@@ -50,6 +50,12 @@ function ContactsView() {
       <p>
         {contact.street} {contact.city}
       </p>
+
+      <h3>Contact details:</h3>
+
+      <p>
+        {contact.email} {contact.linkedin} {contact.twitter}
+      </p>
     </div>
   );
 }
